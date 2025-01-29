@@ -1,0 +1,20 @@
+// The Dev Container format allows you to configure your environment. At the heart of it
+// is a Docker image or Dockerfile which controls the tools available in your environment.
+//
+// See https://aka.ms/devcontainer.json for more information.
+{
+	"name": "TYPO3 Dev Container",
+	"image": "php:8.1-apache",
+	"features": {
+	  "ghcr.io/devcontainers/features/mysql:1": {
+		"version": "8.0",
+		"database": "typo3",
+		"user": "typo3user",
+		"password": "securepassword"
+	  },
+	  "ghcr.io/devcontainers/features/composer:1": {}
+	},
+	"postCreateCommand": "composer install",
+	"ports": ["8000:8000"]
+  }
+  
